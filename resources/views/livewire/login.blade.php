@@ -1,4 +1,5 @@
 <div class="bg-blue-400 h-screen w-screen">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <div class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
         <div class="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0" style="height: 500px">
@@ -6,27 +7,24 @@
                 <div class="flex flex-col flex-1 justify-center mb-8">
                     <h1 class="text-4xl text-center font-thin">Welcome Back</h1>
                     <div class="w-full mt-4">
-                        <form class="form-horizontal w-3/4 mx-auto" method="POST" action="#">
-                            <div class="flex flex-col mt-4">
-                                <input id="email" type="text" class="flex-grow h-8 px-2 border rounded border-grey-400" name="email" value="" placeholder="Email">
+                            <form>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput2">Email address</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput2" wire:model="email" placeholder="Enter Email">
+                                    @error('email') <span class="text-danger">{{ $message }}</span>@enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Enter password" wire:model="password">
+                                </div>
+                                    <button wire:click.prevent="login()" class="btn btn-success" >login</button>
+                            </form>
+                            <div class="text-center mt-4">
+                                <a class="no-underline hover:underline text-blue-dark text-xs">
+                                    Forgot Your Password?
+                                </a>
                             </div>
-                            <div class="flex flex-col mt-4">
-                                <input id="password" type="password" class="flex-grow h-8 px-2 rounded border border-grey-400" name="password" required placeholder="Password">
-                            </div>
-                            <div class="flex items-center mt-4">
-                                <input type="checkbox" name="remember" id="remember" class="mr-2"> <label for="remember" class="text-sm text-grey-dark">Remember Me</label>
-                            </div>
-                            <div class="flex flex-col mt-8">
-                                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded">
-                                    Login
-                                </button>
-                            </div>
-                        </form>
-                        <div class="text-center mt-4">
-                            <a class="no-underline hover:underline text-blue-dark text-xs">
-                                Forgot Your Password?
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>

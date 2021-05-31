@@ -6,7 +6,7 @@
     @livewireStyles
 </head>
 <body>
-    @livewire('welcome')
+    @livewire('login')
     @livewireScripts
 </body>
 </html>

@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::view('users','livewire.home');
-Route::view('/','livewire.login');
+Route::view('/','welcome');
+Route::view('dashboard','livewire.home');
